@@ -12,7 +12,7 @@ def profile():
     user = User.query.get(id)
     return jsonify({"status": "success", "message": "Profile loaded",  "user": user.serialize()})
 
-@bp_profile.route('/profile', methods=['PATCH'])
+@bp_profile.route('/profile', methods=['PUT'])
 @jwt_required()
 def update_profile():
     file = None
